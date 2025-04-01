@@ -21,12 +21,15 @@ export function getReservation(id) {
           : null;
 
       if (id == 2) {
-        resolve({ message: "Successfully retrieved reservation with id 2" });
+        resolve({
+          id: 2,
+          message: "Successfully retrieved reservation with id 2",
+        });
       }
       if (error) {
         reject(error, null);
       } else {
-        resolve(null, { id: id, message: "Successfully retried from db" });
+        resolve({ id: id, message: "Successfully retried from db" });
       }
     }, 1000);
   });
